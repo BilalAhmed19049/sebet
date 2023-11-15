@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:sebet/screens/login_screen.dart';
+import 'package:sebet/screens/signup_screen.dart';
 
 import '../widgets/button_widget.dart';
 import '../widgets/text_widget.dart';
 import '../widgets/textfield_widget.dart';
 
-class SignupScreen extends StatelessWidget {
-  SignupScreen({super.key});
+class SignupScreen2 extends StatelessWidget {
+  SignupScreen2({super.key});
 
-  TextEditingController fisrtNameController = TextEditingController();
-  TextEditingController lastNameController = TextEditingController();
-  TextEditingController emialController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-  TextEditingController confirmPasswordController = TextEditingController();
+  TextEditingController stateController = TextEditingController();
+  TextEditingController zipController = TextEditingController();
+  TextEditingController cityController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+  TextEditingController referralController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,7 @@ class SignupScreen extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()));
+                    MaterialPageRoute(builder: (context) => SignupScreen()));
               },
             );
           },
@@ -47,7 +46,7 @@ class SignupScreen extends StatelessWidget {
             children: [
               Image.asset('assets/images/2 transparent 1.png'),
               const Text(
-                'Hello,',
+                'A Few more',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 30,
@@ -57,12 +56,12 @@ class SignupScreen extends StatelessWidget {
               const TextWidget(
                 color: Colors.white,
                 size: 30,
-                text: 'Signup to',
+                text: 'details to',
               ),
               const TextWidget(
                 color: Colors.white,
                 size: 30,
-                text: 'get started!',
+                text: 'begin',
               ),
               SizedBox(
                 height: 50,
@@ -70,17 +69,18 @@ class SignupScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  //  DropdownButtonFormField(items: items, onChanged: (){}),
                   TextFieldWidget(
-                    labelText: 'First name',
+                    labelText: 'State',
                     height: 51,
                     width: 140,
-                    controller: fisrtNameController,
+                    controller: stateController,
                   ),
                   TextFieldWidget(
-                    labelText: 'Last name',
+                    labelText: 'Zip Code',
                     height: 51,
                     width: 140,
-                    controller: lastNameController,
+                    controller: zipController,
                   ),
                 ],
               ),
@@ -88,40 +88,42 @@ class SignupScreen extends StatelessWidget {
                 height: 5,
               ),
               TextFieldWidget(
-                labelText: 'Email',
+                labelText: 'City',
                 height: 51,
                 width: double.infinity,
-                controller: lastNameController,
+                controller: cityController,
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              TextFormField(
+                controller: addressController,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+                decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey.shade900,
+                    border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        borderSide: BorderSide(
+                          width: 3,
+                        )),
+                    labelText: 'Street address',
+                    labelStyle: TextStyle(color: Colors.grey.shade500)),
+                maxLines: 4,
               ),
               const SizedBox(
                 height: 5,
               ),
               TextFieldWidget(
-                labelText: 'Phone',
+                labelText: 'Referral code (Optional)',
                 height: 51,
                 width: double.infinity,
-                controller: lastNameController,
+                controller: referralController,
               ),
               const SizedBox(
-                height: 5,
-              ),
-              TextFieldWidget(
-                labelText: 'Password',
-                height: 51,
-                width: double.infinity,
-                controller: lastNameController,
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              TextFieldWidget(
-                labelText: 'Confirm Password',
-                height: 51,
-                width: double.infinity,
-                controller: lastNameController,
-              ),
-              const SizedBox(
-                height: 20,
+                height: 30,
               ),
               ElevatedButtonWidget(
                 onPressed: () {},
