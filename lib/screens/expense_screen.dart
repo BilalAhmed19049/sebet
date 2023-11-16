@@ -1,7 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../widgets/addexpense_button_widget.dart';
+import '../widgets/expense_cost_widget.dart';
+import '../widgets/expense_costdetails_widget.dart';
+import '../widgets/expense_elevatedbutton_widget.dart';
 import '../widgets/searchbar_widget.dart';
 
 class ExpenseScreen extends StatelessWidget {
@@ -37,18 +40,72 @@ class ExpenseScreen extends StatelessWidget {
           },
         ),
       ),
-      body: Column(
-        children: [
-          Gap(20),
-          Divider(
-            height: 1,
-            thickness: 2,
-            color: Colors.grey.shade900,
-          ),
-          Gap(20),
-          SearchBarWidget(),
-          IconButton(onPressed: onPressed, icon: icon)
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(13.0),
+              child: Column(
+                children: [
+                  Gap(20),
+                  Divider(
+                    height: 1,
+                    thickness: 2,
+                    color: Colors.grey.shade900,
+                  ),
+                  Gap(20),
+                  SearchBarWidget(),
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      AddExpenseButton(),
+                    ],
+                  ),
+                  const Text(
+                      "YOU CAN'T ADD EXPENSE AS YOU HAVE ALREADY USED 100% OF YOUR EXPECTED INCOME",
+                      style: TextStyle(
+                        color: Color(0xffED3237),
+                        fontSize: 13,
+                      )),
+                ],
+              ),
+            ),
+            Gap(20),
+            Padding(
+              padding: const EdgeInsets.only(right: 13),
+              child: Row(
+                children: [
+                  Expanded(flex: 5, child: CostWidget()),
+                  Gap(5),
+                  Expanded(
+                    flex: 2,
+                    child: ExpenseButtonWidget(
+                      color: Colors.green,
+                      onPressed: () {},
+                      text: 'Edit',
+                      isTrue: true,
+                    ),
+                  ),
+                  Gap(2),
+                  Expanded(
+                    flex: 2,
+                    child: ExpenseButtonWidget(
+                      color: Colors.red,
+                      onPressed: () {},
+                      text: 'Delete',
+                      isTrue: false,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Gap(10),
+            const Padding(
+              padding: EdgeInsets.all(13.0),
+              child: CostDetailsWidget(),
+            ),
+          ],
+        ),
       ),
     );
   }
