@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:sebet/screens/signup_screen.dart';
 
 import '../widgets/button_widget.dart';
+import '../widgets/dropdownfield_widget.dart';
 import '../widgets/text_widget.dart';
 import '../widgets/textfield_widget.dart';
 
@@ -64,32 +66,45 @@ class SignupScreen2 extends StatelessWidget {
                 text: 'begin',
               ),
               SizedBox(
-                height: 50,
+                height: 20,
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   //  DropdownButtonFormField(items: items, onChanged: (){}),
-                  TextFieldWidget(
-                    labelText: 'State',
-                    height: 51,
-                    width: 140,
-                    controller: stateController,
+                  Expanded(
+                    child: DropdownWidget(
+                      width: double.infinity,
+                      suffixIcon: Icons.keyboard_arrow_down,
+                      suffixIconColor: Color(0xff01AA45),
+                      items: const [
+                        DropdownMenuItem(
+                            value: 'Option 1',
+                            child: Text(
+                              'Option 1',
+                              style: TextStyle(color: Colors.green),
+                            )),
+                        DropdownMenuItem(
+                            value: 'Option 2',
+                            child: Text('Option 2',
+                                style: TextStyle(color: Colors.green))),
+                      ],
+                      fillColor: Colors.grey.shade900,
+                    ),
                   ),
-                  TextFieldWidget(
-                    labelText: 'Zip Code',
-                    height: 51,
-                    width: 140,
-                    controller: zipController,
+                  Expanded(
+                    child: TextFieldWidget(
+                      labelText: 'Zip Code',
+                      width: double.infinity,
+                      controller: zipController,
+                    ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 5,
-              ),
+              Gap(5),
               TextFieldWidget(
                 labelText: 'City',
-                height: 51,
+                // height: 51,
                 width: double.infinity,
                 controller: cityController,
               ),
@@ -102,15 +117,16 @@ class SignupScreen2 extends StatelessWidget {
                   color: Colors.white,
                 ),
                 decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.grey.shade900,
-                    border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        borderSide: BorderSide(
-                          width: 3,
-                        )),
-                    labelText: 'Street address',
-                    labelStyle: TextStyle(color: Colors.grey.shade500)),
+                  filled: true,
+                  fillColor: Colors.grey.shade900,
+                  border: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(
+                        width: 3,
+                      )),
+                  labelText: 'Street address',
+                  labelStyle: TextStyle(color: Colors.grey.shade500),
+                ),
                 maxLines: 4,
               ),
               const SizedBox(
@@ -118,7 +134,7 @@ class SignupScreen2 extends StatelessWidget {
               ),
               TextFieldWidget(
                 labelText: 'Referral code (Optional)',
-                height: 51,
+                // height: 51,
                 width: double.infinity,
                 controller: referralController,
               ),

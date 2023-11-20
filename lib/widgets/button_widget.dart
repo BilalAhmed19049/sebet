@@ -18,16 +18,26 @@ class ElevatedButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: width,
       height: height,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xff01AA45),
+              Colors.green,
+            ]),
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-            backgroundColor: buttonColor,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(
-                    10)) // Set the background color of the button
+            backgroundColor: Colors.transparent,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
+            // Set the background color of the button
             ),
         child: Text(
           text,

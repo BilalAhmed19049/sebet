@@ -95,7 +95,7 @@ class NavigationDrawerWidget extends StatelessWidget {
             ),
             Gap(15),
             divider(),
-            Gap(15),
+            Gap(20),
             DottedBorder(
               color: Colors.grey.shade800,
               borderType: BorderType.RRect,
@@ -103,26 +103,33 @@ class NavigationDrawerWidget extends StatelessWidget {
               strokeWidth: 2,
               dashPattern: [12, 4],
               child: Container(
-                height: 167,
+                //height: 167,
                 width: double.infinity,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.add_box_rounded,
-                          color: Colors.green,
-                          size: 50,
-                        )),
+                    Gap(20),
+                    Center(
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.add_box_rounded,
+                            color: Colors.green,
+                            size: 50,
+                          )),
+                    ),
+                    Gap(25),
                     Text('Upload CVS File ',
                         style: TextStyle(color: Colors.grey.shade500)),
                     Text('of your bank tranactions',
                         style: TextStyle(color: Colors.grey.shade500)),
+                    Gap(30),
                   ],
                 ),
               ),
-            )
+            ),
+            Gap(20),
+            divider(),
             //SizedBox(height: 30,),
           ],
         ),
@@ -136,7 +143,7 @@ class NavigationDrawerWidget extends StatelessWidget {
       thickness: 2,
       color: Colors.grey.shade900,
       indent: 3,
-      endIndent: 25,
+      endIndent: 10,
     );
   }
 }

@@ -72,13 +72,13 @@ class SignupScreen extends StatelessWidget {
                 children: [
                   TextFieldWidget(
                     labelText: 'First name',
-                    height: 51,
+                    // height: 51,
                     width: 140,
                     controller: fisrtNameController,
                   ),
                   TextFieldWidget(
                     labelText: 'Last name',
-                    height: 51,
+                    // height: 51,
                     width: 140,
                     controller: lastNameController,
                   ),
@@ -89,7 +89,7 @@ class SignupScreen extends StatelessWidget {
               ),
               TextFieldWidget(
                 labelText: 'Email',
-                height: 51,
+                // height: 51,
                 width: double.infinity,
                 controller: lastNameController,
               ),
@@ -98,7 +98,7 @@ class SignupScreen extends StatelessWidget {
               ),
               TextFieldWidget(
                 labelText: 'Phone',
-                height: 51,
+                // height: 51,
                 width: double.infinity,
                 controller: lastNameController,
               ),
@@ -107,7 +107,7 @@ class SignupScreen extends StatelessWidget {
               ),
               TextFieldWidget(
                 labelText: 'Password',
-                height: 51,
+                // height: 51,
                 width: double.infinity,
                 controller: lastNameController,
               ),
@@ -116,7 +116,7 @@ class SignupScreen extends StatelessWidget {
               ),
               TextFieldWidget(
                 labelText: 'Confirm Password',
-                height: 51,
+                // height: 51,
                 width: double.infinity,
                 controller: lastNameController,
               ),

@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
             ),
             TextFieldWidget(
               labelText: 'Email',
-              height: 51,
+              // height: 51,
               width: double.infinity,
               controller: emailController,
             ),
@@ -53,7 +53,7 @@ class LoginScreen extends StatelessWidget {
             ),
             TextFieldWidget(
               labelText: 'Phone',
-              height: 51,
+              // height: 51,
               width: double.infinity,
               controller: passwordController,
             ),

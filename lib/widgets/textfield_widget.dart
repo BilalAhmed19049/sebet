@@ -4,12 +4,13 @@ class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget(
       {super.key,
       required this.labelText,
-      required this.height,
+      // required this.height,
       required this.width,
       required this.controller});
 
   final String labelText;
-  final double height;
+
+  // final double height;
   final double width;
   final TextEditingController controller;
 
@@ -17,7 +18,7 @@ class TextFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: width,
-      height: height,
+      // height: height,
       child: TextFormField(
         controller: controller,
         style: TextStyle(

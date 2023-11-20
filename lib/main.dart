@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sebet/screens/expense_screen.dart';
+import 'package:sebet/screens/dashboard_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+          // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
           //  useMaterial3: true,
           ),
-      home: ExpenseScreen(),
+      home: DashboardScreen(),
     );
   }
 }
