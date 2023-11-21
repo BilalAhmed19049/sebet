@@ -21,26 +21,26 @@ class DashboardScreen extends StatelessWidget {
                 // Replace this with the path to your image
                 width: 24, // Adjust the width as needed
                 height: 24, // Adjust the height as needed
-              ),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            );
-          },
+                ),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            },
+          ),
         ),
-      ),
-      backgroundColor: Colors.black,
-      drawer: const NavigationDrawerWidget(),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            Expanded(child: Image.asset('assets/images/Group 127.png')),
-            Expanded(child: Image.asset('assets/images/Frame 12.png')),
-            Gap(20),
-            CustomElevatedButton(
-              color: Colors.green.shade700,
-              text: 'TRANSACTIONS',
+        backgroundColor: Colors.black,
+        drawer: NavigationDrawerWidget(),
+        body: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              Expanded(child: Image.asset('assets/images/Group 127.png')),
+              Expanded(child: Image.asset('assets/images/Frame 12.png')),
+              Gap(20),
+              CustomElevatedButton(
+                color: Colors.green.shade700,
+                text: 'TRANSACTIONS',
               image: 'assets/images/Vector.png',
               circleColor: Colors.green.shade500,
               isTrue: false,

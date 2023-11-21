@@ -118,7 +118,6 @@ class ExpenseScreen2 extends StatelessWidget {
                     text: 'Add',
                     buttonColor: Color(0xff01AA45),
                     width: double.infinity,
-                    height: 50,
                   ),
                 ],
               ),

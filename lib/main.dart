@@ -1,8 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:sebet/screens/dashboard_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:sebet/providers/userauth_provider.dart';
+import 'package:sebet/screens/splash_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'firebase_options.dart';
+
+Future<void> main() async {
+  runApp(ChangeNotifierProvider(
+    create: (context) => UserAuth(),
+    child: MyApp(),
+  ));
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -17,7 +29,7 @@ class MyApp extends StatelessWidget {
           // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
           //  useMaterial3: true,
           ),
-      home: DashboardScreen(),
+      home: SplashScreen(),
     );
   }
 }
