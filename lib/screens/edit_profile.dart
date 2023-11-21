@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/userauth_provider.dart';
+import '../utils/colors.dart';
 import '../widgets/button_widget.dart';
 import '../widgets/textfield_widget.dart';
 
@@ -25,7 +26,7 @@ class EditProfile extends StatelessWidget {
       zipCodeController.text = userAuth.userData!.zipCode!;
 
       return Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: CColors.black,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           //iconTheme: IconThemeData(color: Colors.white),
@@ -54,7 +55,6 @@ class EditProfile extends StatelessWidget {
                   TextFieldWidget(
                     labelText: 'First name',
                     // height: 51,
-                    width: double.infinity,
                     controller: firstnameController,
                   ),
                   Gap(10),
@@ -63,7 +63,6 @@ class EditProfile extends StatelessWidget {
                   TextFieldWidget(
                     labelText: 'Last name',
                     // height: 51,
-                    width: double.infinity,
                     controller: lastnameController,
                   ),
                   Gap(10),
@@ -72,7 +71,6 @@ class EditProfile extends StatelessWidget {
                   TextFieldWidget(
                     labelText: 'Address',
                     // height: 51,
-                    width: double.infinity,
                     controller: addressController,
                   ),
                   Gap(10),
@@ -81,7 +79,6 @@ class EditProfile extends StatelessWidget {
                   TextFieldWidget(
                     labelText: 'City',
                     // height: 51,
-                    width: double.infinity,
                     controller: cityController,
                   ),
                   Gap(10),
@@ -90,7 +87,6 @@ class EditProfile extends StatelessWidget {
                   TextFieldWidget(
                     labelText: 'Zip Code',
                     // height: 51,
-                    width: double.infinity,
                     controller: zipCodeController,
                   ),
                   Gap(10),
@@ -111,7 +107,7 @@ class EditProfile extends StatelessWidget {
                       );
                     },
                     text: 'Update',
-                    buttonColor: Colors.green,
+                    buttonColor: CColors.green,
                     width: double.infinity,
                   ),
                 ],
@@ -127,7 +123,7 @@ class EditProfile extends StatelessWidget {
     return Divider(
       height: 12,
       thickness: 2,
-      color: Colors.grey.shade800,
+      color: CColors.grey8,
       indent: 3,
       endIndent: 10,
     );

@@ -5,6 +5,7 @@ import 'package:sebet/screens/dashboard_screen.dart';
 import 'package:sebet/screens/signup_screen.dart';
 
 import '../providers/userauth_provider.dart';
+import '../utils/colors.dart';
 import '../widgets/button_widget.dart';
 import '../widgets/dropdownfield_widget.dart';
 import '../widgets/text_widget.dart';
@@ -53,23 +54,25 @@ class SignupScreen2 extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset('assets/images/2 transparent 1.png'),
-                const Text(
+                Text(
                   'A Few more',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
-                    color: Colors.red,
+                    color: CColors.red,
                   ),
                 ),
-                const TextWidget(
-                  color: Colors.white,
+                TextWidget(
+                  color: CColors.white,
                   size: 30,
                   text: 'details to',
+                  fontWeight: FontWeight.normal,
                 ),
-                const TextWidget(
-                  color: Colors.white,
+                TextWidget(
+                  color: CColors.white,
                   size: 30,
                   text: 'begin',
+                  fontWeight: FontWeight.normal,
                 ),
                 SizedBox(
                   height: 20,
@@ -83,17 +86,17 @@ class SignupScreen2 extends StatelessWidget {
                         width: double.infinity,
                         suffixIcon: Icons.keyboard_arrow_down,
                         suffixIconColor: Color(0xff01AA45),
-                        items: const [
+                        items: [
                           DropdownMenuItem(
                               value: 'Option 1',
                               child: Text(
                                 'Option 1',
-                                style: TextStyle(color: Colors.green),
+                                style: TextStyle(color: CColors.green),
                               )),
                           DropdownMenuItem(
                               value: 'Option 2',
                               child: Text('Option 2',
-                                  style: TextStyle(color: Colors.green))),
+                                  style: TextStyle(color: CColors.green))),
                         ],
                         fillColor: Colors.grey.shade900,
                       ),
@@ -101,7 +104,6 @@ class SignupScreen2 extends StatelessWidget {
                     Expanded(
                       child: TextFieldWidget(
                         labelText: 'Zip Code',
-                        width: double.infinity,
                         controller: zipController,
                       ),
                     ),
@@ -111,7 +113,7 @@ class SignupScreen2 extends StatelessWidget {
                 TextFieldWidget(
                   labelText: 'City',
                   // height: 51,
-                  width: double.infinity,
+
                   controller: cityController,
                 ),
                 const SizedBox(
@@ -120,7 +122,7 @@ class SignupScreen2 extends StatelessWidget {
                 TextFormField(
                   controller: addressController,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: CColors.white,
                   ),
                   decoration: InputDecoration(
                     filled: true,
@@ -131,7 +133,7 @@ class SignupScreen2 extends StatelessWidget {
                           width: 3,
                         )),
                     labelText: 'Street address',
-                    labelStyle: TextStyle(color: Colors.grey.shade500),
+                    labelStyle: TextStyle(color: CColors.grey5),
                   ),
                   maxLines: 4,
                 ),
@@ -141,7 +143,7 @@ class SignupScreen2 extends StatelessWidget {
                 TextFieldWidget(
                   labelText: 'Referral code (Optional)',
                   // height: 51,
-                  width: double.infinity,
+
                   controller: referralController,
                 ),
                 const SizedBox(
@@ -166,7 +168,7 @@ class SignupScreen2 extends StatelessWidget {
                     }
                   },
                   text: 'Start',
-                  buttonColor: Colors.green,
+                  buttonColor: CColors.green,
                   width: double.infinity,
                 ),
               ],

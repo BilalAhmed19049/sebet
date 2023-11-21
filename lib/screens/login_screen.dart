@@ -3,6 +3,7 @@ import 'package:sebet/models/user_data_model.dart';
 import 'package:sebet/providers/userauth_provider.dart';
 import 'package:sebet/screens/signup_screen.dart';
 
+import '../utils/colors.dart';
 import '../widgets/button_widget.dart';
 import '../widgets/text_widget.dart';
 import '../widgets/textfield_widget.dart';
@@ -18,7 +19,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: CColors.black,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -28,23 +29,25 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset('assets/images/2 transparent 1.png'),
-                const Text(
+                Text(
                   'Hello again,',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
-                    color: Colors.red,
+                    color: CColors.red,
                   ),
                 ),
-                const TextWidget(
-                  color: Colors.white,
+                TextWidget(
+                  color: CColors.white,
                   size: 30,
                   text: 'welcome',
+                  fontWeight: FontWeight.normal,
                 ),
-                const TextWidget(
-                  color: Colors.white,
+                TextWidget(
+                  color: CColors.white,
                   size: 30,
                   text: 'back!',
+                  fontWeight: FontWeight.normal,
                 ),
                 SizedBox(
                   height: 20,
@@ -52,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                 TextFieldWidget(
                   labelText: 'Email',
                   // height: 51,
-                  width: double.infinity,
+
                   controller: emailController,
                 ),
                 const SizedBox(
@@ -61,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                 TextFieldWidget(
                   labelText: 'Phone',
                   // height: 51,
-                  width: double.infinity,
+
                   controller: passwordController,
                 ),
                 const SizedBox(
@@ -87,7 +90,7 @@ class LoginScreen extends StatelessWidget {
                     }
                   },
                   text: 'Sign in',
-                  buttonColor: Colors.green,
+                  buttonColor: CColors.green,
                   width: double.infinity,
                 ),
                 Row(
@@ -95,10 +98,10 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     TextButton(
                         onPressed: () {},
-                        child: const Text(
+                        child: Text(
                           'Forget password?',
                           style: TextStyle(
-                            color: Colors.red,
+                            color: CColors.red,
                           ),
                         )),
                     TextButton(
@@ -108,10 +111,10 @@ class LoginScreen extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (ctx) => SignupScreen()));
                         },
-                        child: const Text(
+                        child: Text(
                           'SignUp',
                           style: TextStyle(
-                            color: Colors.green,
+                            color: CColors.green,
                           ),
                         )),
                   ],

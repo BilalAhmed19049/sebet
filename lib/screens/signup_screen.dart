@@ -3,6 +3,7 @@ import 'package:sebet/models/user_data_model.dart';
 import 'package:sebet/providers/userauth_provider.dart';
 import 'package:sebet/screens/signup_screen2.dart';
 
+import '../utils/colors.dart';
 import '../widgets/button_widget.dart';
 import '../widgets/text_widget.dart';
 import '../widgets/textfield_widget.dart';
@@ -47,23 +48,25 @@ class SignupScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset('assets/images/2 transparent 1.png'),
-                const Text(
+                Text(
                   'Hello,',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
-                    color: Colors.red,
+                    color: CColors.red,
                   ),
                 ),
-                const TextWidget(
-                  color: Colors.white,
+                TextWidget(
+                  color: CColors.white,
                   size: 30,
                   text: 'Signup to',
+                  fontWeight: FontWeight.normal,
                 ),
                 const TextWidget(
                   color: Colors.white,
                   size: 30,
                   text: 'get started!',
+                  fontWeight: FontWeight.normal,
                 ),
                 SizedBox(
                   height: 50,
@@ -74,13 +77,13 @@ class SignupScreen extends StatelessWidget {
                     TextFieldWidget(
                       labelText: 'First name',
                       // height: 51,
-                      width: 140,
+
                       controller: fisrtNameController,
                     ),
                     TextFieldWidget(
                       labelText: 'Last name',
                       // height: 51,
-                      width: 140,
+
                       controller: lastNameController,
                     ),
                   ],
@@ -91,7 +94,7 @@ class SignupScreen extends StatelessWidget {
                 TextFieldWidget(
                   labelText: 'Email',
                   // height: 51,
-                  width: double.infinity,
+
                   controller: emailController,
                 ),
                 const SizedBox(
@@ -100,7 +103,7 @@ class SignupScreen extends StatelessWidget {
                 TextFieldWidget(
                   labelText: 'Phone',
                   // height: 51,
-                  width: double.infinity,
+
                   controller: phoneController,
                 ),
                 const SizedBox(
@@ -109,7 +112,7 @@ class SignupScreen extends StatelessWidget {
                 TextFieldWidget(
                   labelText: 'Password',
                   // height: 51,
-                  width: double.infinity,
+
                   controller: passwordController,
                 ),
                 const SizedBox(
@@ -118,7 +121,7 @@ class SignupScreen extends StatelessWidget {
                 TextFieldWidget(
                   labelText: 'Confirm Password',
                   // height: 51,
-                  width: double.infinity,
+
                   controller: confirmPasswordController,
                 ),
                 const SizedBox(
@@ -144,7 +147,7 @@ class SignupScreen extends StatelessWidget {
                     }
                   },
                   text: 'Sign Up',
-                  buttonColor: Colors.green,
+                  buttonColor: CColors.green,
                   width: double.infinity,
                 ),
               ],

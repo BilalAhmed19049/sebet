@@ -5,16 +5,18 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sebet/models/user_data_model.dart';
 
+import '../utils/constants.dart';
+
 class UserAuth extends ChangeNotifier {
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  final CollectionReference _userCollection =
-  FirebaseFirestore.instance.collection('users');
+  final FirebaseAuth _auth = Constants.auth;
+  final FirebaseFirestore _firestore = Constants.firestore;
+  final CollectionReference _userCollection = Constants.users;
   UserDataModel? _userData;
   StreamSubscription<UserDataModel>? _userDataSubscription;
 
   UserDataModel? get userData => _userData;
 
+  // Login Function
   Future<bool> logIn({
     required BuildContext context,
     required UserDataModel userData,
@@ -32,6 +34,7 @@ class UserAuth extends ChangeNotifier {
     }
   }
 
+  //Signup function
   Future<bool> signUp({
     required UserDataModel userData,
     required BuildContext context,
@@ -50,8 +53,9 @@ class UserAuth extends ChangeNotifier {
     }
   }
 
-  Future<bool> updateData(Map<String, dynamic> data, String uid,
-      BuildContext context) async {
+  //Update Function
+  Future<bool> updateData(
+      Map<String, dynamic> data, String uid, BuildContext context) async {
     try {
       await _userCollection.doc(uid).update(data);
       ScaffoldMessenger.of(context)
@@ -65,13 +69,15 @@ class UserAuth extends ChangeNotifier {
   }
 
 
+  // 'users' collection stream
   Stream<UserDataModel> get userDataStream {
-    return _userCollection.doc(_auth.currentUser!.uid).snapshots().map((
-        snapshot) {
+    return _userCollection
+        .doc(_auth.currentUser!.uid)
+        .snapshots()
+        .map((snapshot) {
       return UserDataModel.fromMap(snapshot.data() as Map<String, dynamic>);
     });
   }
-
 
   UserAuth() {
     _userDataSubscription = userDataStream.listen((userData) {
@@ -85,6 +91,4 @@ class UserAuth extends ChangeNotifier {
     _userDataSubscription?.cancel();
     super.dispose();
   }
-
-
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../utils/colors.dart';
 import '../widgets/button_widget.dart';
 import '../widgets/dropdownfield_widget.dart';
 import '../widgets/expense2_row_widget.dart';
@@ -12,13 +13,13 @@ class ExpenseScreen2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: CColors.black,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: const Text(
+        title: Text(
           'Add Expense',
           style: TextStyle(
-            color: Colors.white,
+            color: CColors.white,
             fontSize: 25,
           ),
         ),
@@ -65,39 +66,39 @@ class ExpenseScreen2 extends StatelessWidget {
                     ],
                   ),
                   Gap(15),
-                  const DropdownWidget(
+                  DropdownWidget(
                     // height: 50,
                     width: double.infinity,
                     suffixIcon: Icons.keyboard_arrow_down,
                     suffixIconColor: Colors.black,
-                    items: [
+                    items: const [
                       DropdownMenuItem(
                           value: 'Option 1', child: Text('Option 1')),
                       DropdownMenuItem(
                           value: 'Option 2', child: Text('Option 2')),
                     ],
-                    fillColor: Colors.white,
+                    fillColor: CColors.white,
                   ),
                   Gap(30),
                   RowWidget(
                     text: 'Clothing',
-                    fillColor: Colors.grey.shade900,
-                    textColor: Colors.white,
+                    fillColor: CColors.grey9,
+                    textColor: CColors.white,
                   ),
                   RowWidget(
                     text: 'Children',
-                    fillColor: Colors.grey.shade900,
-                    textColor: Colors.white,
+                    fillColor: CColors.grey9,
+                    textColor: CColors.white,
                   ),
                   RowWidget(
                     text: 'Spouse',
-                    fillColor: Colors.grey.shade900,
-                    textColor: Colors.white,
+                    fillColor: CColors.grey9,
+                    textColor: CColors.white,
                   ),
                   RowWidget(
                     text: 'Uniform',
-                    fillColor: Colors.grey.shade900,
-                    textColor: Colors.white,
+                    fillColor: CColors.grey9,
+                    textColor: CColors.white,
                   ),
                   Gap(70),
                   Row(
@@ -106,7 +107,7 @@ class ExpenseScreen2 extends StatelessWidget {
                       TextButtonWidget(
                         onPressed: () {},
                         text: 'add more',
-                        color: Colors.green,
+                        color: CColors.green,
                         fontSize: 15,
                         withIcon: false,
                       ),

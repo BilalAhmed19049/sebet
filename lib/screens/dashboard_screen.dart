@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../utils/colors.dart';
 import '../widgets/elevatedbutton_widget.dart';
 import '../widgets/navigation_drawer_widget.dart';
 
@@ -39,19 +40,19 @@ class DashboardScreen extends StatelessWidget {
               Expanded(child: Image.asset('assets/images/Frame 12.png')),
               Gap(20),
               CustomElevatedButton(
-                color: Colors.green.shade700,
-                text: 'TRANSACTIONS',
+                color: CColors.green7,
+              text: 'TRANSACTIONS',
               image: 'assets/images/Vector.png',
-              circleColor: Colors.green.shade500,
+              circleColor: CColors.green5,
               isTrue: false,
               onPressed: () {},
             ),
             Gap(20),
             CustomElevatedButton(
-              color: Colors.red.shade900,
+              color: CColors.red9,
               text: 'REPORTS',
               image: 'assets/images/Paperbnw.png',
-              circleColor: Colors.red.shade700,
+              circleColor: CColors.red7,
               isTrue: true,
               onPressed: () {},
             ),

@@ -9,7 +9,6 @@ class CostDetailsWidget extends StatelessWidget {
     return Stack(children: [
       Container(
         width: double.infinity,
-        height: 150,
         decoration: const BoxDecoration(
             color: Color(0xff292929),
             borderRadius: BorderRadius.all(Radius.circular(20))),

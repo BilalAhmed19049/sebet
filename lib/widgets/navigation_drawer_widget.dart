@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:provider/provider.dart';
+import 'package:sebet/utils/constants.dart';
 
 import '../providers/userauth_provider.dart';
 import '../screens/edit_profile.dart';
@@ -11,7 +12,7 @@ import 'drawer_item.dart';
 class NavigationDrawerWidget extends StatelessWidget {
   NavigationDrawerWidget({super.key});
 
-  final FirebaseAuth auth = FirebaseAuth.instance;
+  final FirebaseAuth auth = Constants.auth;
 
   @override
   Widget build(BuildContext context) {
